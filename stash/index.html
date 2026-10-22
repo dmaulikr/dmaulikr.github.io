@@ -1,50 +1,339 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stash — Knit, crochet and sew</title>
-<meta name="description" content="Stash keeps your knitting, crochet and sewing projects, your yarn and fabric, and your patterns in one calm place on iPhone and iPad.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stash · Knit, crochet & sewing — beautifully tracked</title>
+<meta name="description" content="A calm, beautiful home for everything you make. Knit, crochet, and sew with one iOS app — row counter, yarn stash, pattern library, calculators, iCloud sync. No account needed." />
+
+<meta property="og:title" content="Stash — Knit, crochet & sewing tracker" />
+<meta property="og:description" content="A calm, beautiful home for everything you make. iOS. No account needed." />
+<meta property="og:url" content="https://dmaulikr.github.io/stash/" />
+<meta name="twitter:card" content="summary_large_image" />
+
 <style>
-  :root { --paper: #FAF5EC; --ink: #1F2128; --accent: #21736E; --rule: #E3DBCC; color-scheme: light dark; }
-  @media (prefers-color-scheme: dark) { :root { --paper: #15181C; --ink: #F2EFE9; --accent: #4FB8B1; --rule: #2C323A; } }
-  html { background: var(--paper); }
-  body {
-    margin: 0 auto; max-width: 36rem; padding: 4rem 1.25rem 5rem;
-    background: var(--paper); color: var(--ink);
-    font: 1.0625rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  :root {
+    --teal: #1E6F66;
+    --gold: #C9A961;
+    --ink: #1A1F2A;
+    --bg: #F5EFE6;
+    --rule: rgba(26, 31, 42, 0.12);
   }
-  h1, h2 { font-family: "Iowan Old Style", Georgia, "Times New Roman", serif; font-weight: normal; }
-  h1 { font-size: 2rem; margin: 0 0 0.75rem; }
-  h2 { font-size: 1.15rem; margin: 2.25rem 0 0.5rem; }
-  p { margin: 0 0 1rem; }
-  ul { margin: 0 0 1rem; padding-left: 1.2rem; }
-  li { margin-bottom: 0.4rem; }
-  a { color: var(--accent); }
-  .lede { font-size: 1.15rem; }
-  .quiet { opacity: 0.65; font-size: 0.9375rem; border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 3rem; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header.hero {
+    padding: 64px 0 80px;
+    text-align: center;
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--teal);
+    margin-bottom: 56px;
+  }
+  .brand-mark .dot {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  h1.tagline {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1.1;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: rgba(26, 31, 42, 0.7);
+    max-width: 540px;
+    margin: 0 auto 32px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: var(--teal);
+    color: white;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 6px 24px rgba(30, 111, 102, 0.25);
+    transition: transform 0.15s;
+  }
+  .cta:hover { transform: translateY(-1px); }
+  .cta svg { width: 22px; height: 22px; }
+
+  /* Feature blocks */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 64px 0;
+  }
+  .feature {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .feature h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 8px;
+  }
+  .feature p {
+    margin: 0;
+    color: rgba(26, 31, 42, 0.7);
+    font-size: 15px;
+  }
+  .feature .icon {
+    width: 40px; height: 40px;
+    background: rgba(30, 111, 102, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  /* Quotes / philosophy */
+  .philosophy {
+    background: white;
+    border-radius: 24px;
+    padding: 48px;
+    margin: 32px 0 64px;
+    text-align: center;
+  }
+  .philosophy h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 32px;
+    margin: 0 0 16px;
+  }
+  .philosophy p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: rgba(26, 31, 42, 0.7);
+    font-size: 17px;
+  }
+
+  /* Pricing */
+  .pricing {
+    text-align: center;
+    padding: 48px 0;
+  }
+  .pricing h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 32px;
+    margin: 0 0 24px;
+  }
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .plan {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .plan.featured { border-color: var(--gold); position: relative; }
+  .plan.featured::after {
+    content: "Best value";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .plan h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+  .plan .price {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 28px;
+    color: var(--teal);
+    margin: 4px 0;
+  }
+  .plan p {
+    color: rgba(26, 31, 42, 0.6);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* Trust */
+  .trust {
+    padding: 48px 0;
+    text-align: center;
+    color: rgba(26, 31, 42, 0.6);
+    font-size: 14px;
+  }
+  .trust ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+  .trust li::before {
+    content: "✓";
+    color: var(--teal);
+    margin-right: 6px;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  footer.site {
+    border-top: 1px solid var(--rule);
+    padding: 32px 24px;
+    text-align: center;
+    color: rgba(26, 31, 42, 0.5);
+    font-size: 12px;
+    margin-top: 64px;
+  }
+  footer.site a { color: rgba(26, 31, 42, 0.7); margin: 0 8px; text-decoration: none; }
+  footer.site a:hover { color: var(--teal); }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16191F;
+      --ink: #F5EFE6;
+      --rule: rgba(245, 239, 230, 0.10);
+    }
+    .feature, .philosophy, .plan { background: rgba(255, 255, 255, 0.04); }
+    .sub, .feature p, .philosophy p, .plan p { color: rgba(245, 239, 230, 0.72); }
+    .trust, footer.site { color: rgba(245, 239, 230, 0.6); }
+    footer.site a { color: rgba(245, 239, 230, 0.78); }
+    .plan .price, .brand-mark, .feature .icon, .trust li::before { color: #4FB8B1; }
+  }
 </style>
 </head>
 <body>
-<h1>Stash</h1>
-<p class="lede">Your knitting, crochet and sewing projects, your yarn and fabric, and your patterns, in one calm place on iPhone and iPad.</p>
-<p>Coming soon to the App Store.</p>
+<div class="container">
 
-<h2>Count rows without losing your place</h2>
-<p>A big counter that opens straight to the project you're working on. Count from the Home Screen widget, from the Lock Screen without unlocking, or by asking Siri. Undo is always one tap away.</p>
+  <header class="hero">
+    <div class="brand-mark">
+      <span class="dot"></span> Stash
+    </div>
+    <h1 class="tagline">A calm home<br />for everything you make.</h1>
+    <p class="sub">
+      Knit, crochet, and sew &mdash; tracked beautifully in one iOS app. Row counter, yarn stash, pattern library, calculators, iCloud sync. No account needed to start.
+    </p>
+    <span class="cta" aria-disabled="true">
+      <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      Coming soon to the App Store
+    </span>
+  </header>
 
-<h2>Everything else, when you want it</h2>
-<ul>
-  <li>Projects with progress photos, notes and a journal.</li>
-  <li>Your stash of yarn, fabric and notions, with yarn-label scanning.</li>
-  <li>Patterns with a PDF reader and a line guide.</li>
-  <li>Gauge, yardage, ball-weight and WPI calculators.</li>
-  <li>Plain-language help for beginners, including "Is this normal?" answers to the worries every new maker has.</li>
-</ul>
+  <section class="features">
+    <div class="feature">
+      <div class="icon">○</div>
+      <h3>Row counter, your way</h3>
+      <p>Big-tap counter with full-screen Focus mode. Count from the Lock Screen without unlocking. Survives phone restarts.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">▦</div>
+      <h3>Know your stash</h3>
+      <p>Yarn, fabric, notions in one library. Point your camera at a yarn label to pick up details like weight and dye lot.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">★</div>
+      <h3>Pattern library</h3>
+      <p>Attach the PDF. Read it inline. Per-pattern abbreviation glossary. See every project from a pattern.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">⌗</div>
+      <h3>Calculators built in</h3>
+      <p>Gauge, yardage, ball weight, WPI. The math you used to do on a notepad, now on your phone.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">✿</div>
+      <h3>Made for beginners</h3>
+      <p>Learn-the-craft hub with inline tutorials. "Is this normal?" reassurance library. Starter shopping lists in your currency.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">⌂</div>
+      <h3>Private by design</h3>
+      <p>Your data lives on your device. iCloud sync if you want it. No analytics, no ads, no tracking.</p>
+    </div>
+  </section>
 
-<h2>Private by design</h2>
-<p>No account and no sign-up. Your projects stay on your device and, if you use iCloud, in your own private iCloud. Stash has no servers and runs no analytics.</p>
+  <section class="philosophy">
+    <h2>Made with respect.</h2>
+    <p>
+      Stash doesn&rsquo;t treat crafters as productivity machines. We respect resting projects. We celebrate cast-on as much as cast-off. We use words like &ldquo;resting&rdquo; instead of &ldquo;abandoned&rdquo;. We never call your data ours. We never shame a missed streak. And we&rsquo;ll never run an ad.
+    </p>
+  </section>
 
-<p class="quiet"><a href="support/">Support</a> · <a href="privacy/">Privacy</a> · <a href="terms/">Terms</a> · Made by Krishna and Maulik Desai</p>
+  <section class="pricing">
+    <h2>Free forever. Pro when you&rsquo;re ready.</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <div class="price">&mdash;</div>
+        <p>Up to 5 active projects. Up to 5 photos each. Every calculator, every tool and iCloud sync. Forever.</p>
+      </div>
+      <div class="plan">
+        <h3>Pro</h3>
+        <div class="price">Yearly or one-time</div>
+        <p>Unlimited projects and photos. Total stash value. Project cost. Apple shows the price in your currency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <ul>
+      <li>iPhone and iPad</li>
+      <li>iCloud sync across devices</li>
+      <li>Works fully offline</li>
+      <li>No account required</li>
+      <li>No ads, no analytics</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="site">
+  <div>
+    <a href="privacy/">Privacy</a> ·
+    <a href="terms/">Terms</a> ·
+    <a href="support/">Support</a>
+  </div>
+  <div style="margin-top: 8px;">Made by Krishna and Maulik Desai &middot; An independent iOS app, made with respect.</div>
+</footer>
 </body>
 </html>
