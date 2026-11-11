@@ -3,3 +3,5 @@ Allow: /
 
 Sitemap: https://dmaulikr.github.io/ledger-site/sitemap.xml
 Sitemap: https://dmaulikr.github.io/onward/sitemap.xml
+Sitemap: https://dmaulikr.github.io/stash/sitemap.xml
+Sitemap: https://dmaulikr.github.io/yarn-calculator/sitemap.xml

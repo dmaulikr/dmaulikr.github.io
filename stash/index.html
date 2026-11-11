@@ -3,12 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stashcraft · Knit, crochet & sewing — beautifully tracked</title>
-<meta name="description" content="A calm, beautiful home for everything you make. Knit, crochet, and sew with one iOS app — row counter, yarn stash, pattern library, calculators, iCloud sync. No account needed." />
+<title>Stashcraft: Knitting &amp; Crochet Row Counter for iPhone</title>
+<meta name="description" content="Count rows from your Lock Screen, keep your yarn stash and patterns together, and sync free across iPhone and iPad through iCloud. No account. Free to start." />
+<link rel="canonical" href="https://dmaulikr.github.io/stash/" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
-<meta property="og:title" content="Stashcraft — Knit, crochet & sewing tracker" />
-<meta property="og:description" content="A calm, beautiful home for everything you make. iOS. No account needed." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Stashcraft" />
+<meta property="og:title" content="Stashcraft: a calm row counter for knitting and crochet" />
+<meta property="og:description" content="Count from your Lock Screen. Free iCloud sync across iPhone and iPad. No account." />
 <meta property="og:url" content="https://dmaulikr.github.io/stash/" />
+<meta property="og:image" content="https://dmaulikr.github.io/stash/assets/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Stashcraft's Home screen with a knitting project at 86 rows, next to the words: A calm row counter for knitting and crochet." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="apple-itunes-app" content="app-id=6772457202">
 
@@ -17,11 +26,18 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Stashcraft: Knit & Crochet",
-  "description": "A calm home for everything you make. Count rows from your Lock Screen, keep your yarn stash and patterns together, and sync free with iCloud. No account needed.",
+  "description": "A calm row counter for knitting and crochet. Count rows from your Lock Screen, keep your yarn stash and patterns together, and sync free with iCloud. No account needed.",
   "operatingSystem": "iOS 26.0 or later",
   "applicationCategory": "LifestyleApplication",
   "url": "https://dmaulikr.github.io/stash/",
   "downloadUrl": "https://apps.apple.com/app/apple-store/id6772457202?pt=128885861&ct=site-stashcraft&mt=8",
+  "image": "https://dmaulikr.github.io/stash/assets/apple-touch-icon.png",
+  "screenshot": [
+    "https://dmaulikr.github.io/stash/assets/shot-home.jpg",
+    "https://dmaulikr.github.io/stash/assets/shot-stash.jpg",
+    "https://dmaulikr.github.io/stash/assets/shot-learn.jpg"
+  ],
+  "author": { "@type": "Person", "name": "Krishna Desai" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -244,6 +260,47 @@
     footer.site a { color: rgba(245, 239, 230, 0.78); }
     .plan .price, .brand-mark, .feature .icon, .trust li::before { color: #4FB8B1; }
   }
+
+  /* Screens */
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 0 0 24px;
+    margin: 0;
+  }
+  .screens figure { margin: 0; text-align: center; }
+  .screens img {
+    width: 100%; height: auto; display: block;
+    border-radius: 28px;
+    border: 1px solid var(--rule);
+    box-shadow: 0 12px 32px rgba(26, 31, 42, 0.10);
+    background: white;
+  }
+  .screens figcaption { margin-top: 12px; font-size: 15px; color: rgba(26, 31, 42, 0.7); }
+  @media (max-width: 640px) {
+    h1.tagline br { display: none; }
+    .screens { grid-template-columns: repeat(3, 72%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+    .screens figure { scroll-snap-align: center; }
+  }
+  .section-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    margin: 48px 0 0;
+  }
+  .features { padding-top: 32px; }
+  .calc-callout { text-align: center; margin: 0 0 48px; font-size: 17px; }
+  .calc-callout a { color: var(--teal); font-weight: 600; text-decoration: none; }
+  .calc-callout a:hover { text-decoration: underline; }
+  .price-alt { font-family: "Fraunces", Georgia, serif; font-size: 18px; color: var(--teal); margin: -2px 0 8px; }
+  .price-note { margin: 16px 0 0; font-size: 13px; color: rgba(26, 31, 42, 0.55); }
+  @media (prefers-color-scheme: dark) {
+    .screens figcaption, .price-note { color: rgba(245, 239, 230, 0.68); }
+    .screens img { box-shadow: none; }
+    .calc-callout a, .price-alt { color: #4FB8B1; }
+  }
 </style>
 </head>
 <body>
@@ -253,9 +310,9 @@
     <div class="brand-mark">
       <span class="dot"></span> Stashcraft
     </div>
-    <h1 class="tagline">A calm home<br />for everything you make.</h1>
+    <h1 class="tagline">A calm row counter<br />for knitting and crochet</h1>
     <p class="sub">
-      Knit, crochet, and sew &mdash; tracked beautifully in one iOS app. Row counter, yarn stash, pattern library, calculators, iCloud sync. No account needed to start.
+      Count from your Lock Screen without unlocking, and pick up on your iPad where your iPhone left off. Your projects, yarn stash and patterns sync free through your own iCloud.
     </p>
     <a class="store-badge" href="https://apps.apple.com/app/apple-store/id6772457202?pt=128885861&amp;ct=site-stashcraft&amp;mt=8">
       <picture>
@@ -263,14 +320,30 @@
         <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1794202480" alt="Download Stashcraft on the App Store" width="180" height="60">
       </picture>
     </a>
-    <p class="store-note">Free on iPhone and iPad</p>
+    <p class="store-note">Free on iPhone and iPad &middot; iOS 26 or later</p>
   </header>
 
+  <section class="screens" aria-label="Screens from the app">
+    <figure>
+      <img src="assets/shot-home.jpg" width="600" height="847" alt="Stashcraft's Home screen: a knitted cardigan at 86 of 140 rows, with large minus and plus buttons, and other works in progress below." />
+      <figcaption>Count a row in one tap.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/shot-stash.jpg" width="600" height="847" loading="lazy" alt="The Stash tab: a grid of yarns, each with its colour, name, maker and number of skeins, filtered by yarn weight." />
+      <figcaption>Your yarn, fabric and notions in one place.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/shot-learn.jpg" width="600" height="847" loading="lazy" alt="A first crochet lesson, with a switch between US and UK stitch names." />
+      <figcaption>Beginner lessons in US or UK terms.</figcaption>
+    </figure>
+  </section>
+
+  <h2 class="section-title">What&rsquo;s inside</h2>
   <section class="features">
     <div class="feature">
       <div class="icon">○</div>
       <h3>Row counter, your way</h3>
-      <p>Big-tap counter with full-screen Focus mode. Count from the Lock Screen without unlocking. Survives phone restarts.</p>
+      <p>A big +1 that opens to the project you&rsquo;re working on. Count from the Lock Screen without unlocking, from a widget, or by asking Siri. Survives phone restarts.</p>
     </div>
     <div class="feature">
       <div class="icon">▦</div>
@@ -280,7 +353,7 @@
     <div class="feature">
       <div class="icon">★</div>
       <h3>Pattern library</h3>
-      <p>Attach the PDF. Read it inline. Per-pattern abbreviation glossary. See every project from a pattern.</p>
+      <p>Attach the PDF and it reopens on the page you left. Per-pattern abbreviation glossary. See every project made from a pattern.</p>
     </div>
     <div class="feature">
       <div class="icon">⌗</div>
@@ -290,14 +363,16 @@
     <div class="feature">
       <div class="icon">✿</div>
       <h3>Made for beginners</h3>
-      <p>Learn-the-craft hub with inline tutorials. "Is this normal?" reassurance library. Starter shopping lists in your currency.</p>
+      <p>Short lessons with videos. &ldquo;Is this normal?&rdquo; answers for the worries every new maker has. Starter shopping lists with free and recycled alternatives.</p>
     </div>
     <div class="feature">
       <div class="icon">⌂</div>
       <h3>Private by design</h3>
-      <p>Your data lives on your device. iCloud sync if you want it. No analytics, no ads, no tracking.</p>
+      <p>No account to make. Your data lives on your device and in your own iCloud. No analytics, no ads, no tracking.</p>
     </div>
   </section>
+
+  <p class="calc-callout">Not sure how much yarn to buy? <a href="../yarn-calculator/">Try the free yarn calculator</a></p>
 
   <section class="philosophy">
     <h2>Made with respect.</h2>
@@ -307,19 +382,21 @@
   </section>
 
   <section class="pricing">
-    <h2>Free forever. Pro when you&rsquo;re ready.</h2>
+    <h2>Free to start. Pro when you&rsquo;re ready.</h2>
     <div class="plans">
       <div class="plan">
         <h3>Free</h3>
-        <div class="price">&mdash;</div>
-        <p>Up to 5 active projects. Up to 5 photos each. Every calculator, every tool and iCloud sync. Forever.</p>
+        <div class="price">$0</div>
+        <p>Up to 5 active projects with 5 photos each. The row counter everywhere, your stash, patterns, calculators, lessons and iCloud sync.</p>
       </div>
       <div class="plan">
         <h3>Pro</h3>
-        <div class="price">Yearly or one-time</div>
-        <p>A row counter and highlighter inside your pattern PDFs. Unlimited projects and photos. Total stash value. Project cost. Apple shows the price in your currency.</p>
+        <div class="price">$7.99 a year</div>
+        <div class="price-alt">or $17.99 once</div>
+        <p>A row counter and highlighter inside your pattern PDFs. Unlimited projects and photos. Total stash value and project cost.</p>
       </div>
     </div>
+    <p class="price-note">Prices in US dollars. The App Store shows the price in your currency.</p>
   </section>
 
   <section class="trust">
