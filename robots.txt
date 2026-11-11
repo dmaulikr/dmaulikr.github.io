@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://dmaulikr.github.io/ledger-site/sitemap.xml
 Sitemap: https://dmaulikr.github.io/onward/sitemap.xml
