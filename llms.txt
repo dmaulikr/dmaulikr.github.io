@@ -1,0 +1,21 @@
+# KuberBudh apps
+
+> Calm, private apps for iPhone, iPad, Mac and Apple Watch, published on the App Store by Krishna Desai. Every app works without an account.
+
+## Apps
+
+- [the worry jar](https://dmaulikr.github.io/worryjar-site/): free iPhone app for overthinking: type or speak a worry, set it down, and let it go as a star; a daily worry window keeps worries to one time a day. App Store: https://apps.apple.com/app/id6767879136
+- [Stashcraft](https://dmaulikr.github.io/stash/): knitting and crochet row counter, project tracker, yarn stash organizer and PDF pattern library for iPhone and iPad; count rows from the Lock Screen. App Store: https://apps.apple.com/app/id6772457202
+- [Tend Garden](https://dmaulikr.github.io/tend-sites/): free habit tracker for iPhone with no streaks: each habit is a plant that grows as you tend it and rests, never dies, when you miss a day. App Store: https://apps.apple.com/app/id6768056018
+- [QuietPage](https://dmaulikr.github.io/QuietPAge-sites/): free, private journal for iPhone and iPad that asks one question a day; Mirror questions return so you can compare your answers over time. App Store: https://apps.apple.com/app/id6774216806
+- [Sill](https://dmaulikr.github.io/sill-site/): writes a developer's daily standup (Yesterday, Today, Blockers) from git commits, finished tasks and follow-ups; Mac, iPhone, iPad and Apple Watch. App Store: https://apps.apple.com/app/id6823163147
+- [Onward](https://dmaulikr.github.io/onward/): free iPhone app for one long-term goal: one step a day, no streaks, no subscription. App Store: https://apps.apple.com/app/id6825297435
+- [Ledger](https://dmaulikr.github.io/ledger-site/): free, private money tracker for iPhone that keeps monthly spending and long projects, like building a house, apart; rupees, UPI and bank SMS logging. App Store: https://apps.apple.com/app/id6796905803
+- [Ascendant](https://dmaulikr.github.io/ascendant-site/): free habit tracker RPG for iPhone: one to three daily quests, a dusk check-in that adjusts tomorrow, and one rest day in seven. App Store: https://apps.apple.com/app/id6828269902
+
+## Free tools
+
+- [Yarn calculator](https://dmaulikr.github.io/yarn-calculator/): estimate how much yarn a knitting or crochet project needs.
+- [Ledger guides and calculators](https://dmaulikr.github.io/ledger-site/): a house construction cost calculator and money guides.
+
+Last updated: 2026-11-24
